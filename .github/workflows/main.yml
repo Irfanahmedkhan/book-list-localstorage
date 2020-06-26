@@ -26,7 +26,6 @@ jobs:
       uses: actions/setup-node@v2-beta
       with:
         node-version: 12
-          
     
     - name: Install React Scripts
       run: npm install -g react-scripts 
@@ -39,11 +38,11 @@ jobs:
     - name: Install React
       run: yarn add react
       
-    - name: Build React App
-      run: yarn build
-      
+    - name: Build Yarn and npm
+      uses: linchpin/action-build-yarn-npm@master
+    
     - name: Install Surge
       run: npm install -g surge
-           
+      
     - name: Run surge
       run: surge ./build book-list.surge.sh --token ${{ secrets.SURGE_TOKEN }}
