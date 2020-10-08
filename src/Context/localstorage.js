@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-
+console.log(React);
 // Hook
 function useLocalStorage(key, initialValue) {
     // State to store our value
