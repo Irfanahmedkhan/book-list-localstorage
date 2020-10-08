@@ -6,26 +6,17 @@ import useLocalStorage from './localstorage'
 
 export const BookContext = createContext()
 
-
 const BookContextprovider = (props) => {
+console.log(props);
+
 
     const [Books, setBooks] = useLocalStorage('Books', [])
-
-    // useEffect(() => {
-    //     const localdata = localStorage.getItem('Books')
-    //     if (localdata) {
-    //         JSON.parse(localdata)
-    //     }
-    // },[])
- 
-    // useEffect(() => {
-    //     localStorage.setItem('Books', JSON.stringify(Books))
-    // })
 
 
 
     
     const addBook = (title, author,) => {
+        console.log('contxt', title, author);
         setBooks([...Books, { title, author, id: uuidv4() }])
     }
 

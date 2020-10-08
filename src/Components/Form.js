@@ -8,12 +8,13 @@ const Form = () => {
 
     const [title, settitle] = useState('')
     const [author, setauthor] = useState('')
+    console.log(title);
 
     const submitbook = (e) => {
         e.preventDefault()
-        addBook (title, author)
         settitle('')
         setauthor('')
+        addBook(title, author)
     }
 
 
